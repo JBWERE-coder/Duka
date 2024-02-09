@@ -9,5 +9,4 @@ class Product(db.Model):
     price = db.Column(db.Float, nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
-
-
+order_items = db.relationship('OrderItem', back_populates='product')

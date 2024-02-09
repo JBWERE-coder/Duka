@@ -9,3 +9,6 @@ class OrderItem(db.Model):
     product_id = db.Column(db.Integer, db.ForeignKey('product.id'), nullable=False)
     quantity = db.Column(db.Integer, nullable=False)
     total_price = db.Column(db.Float, nullable=False)
+
+order = db.relationship('Order', back_populates='order_items')
+product = db.relationship('Product', back_populates='order_items')
